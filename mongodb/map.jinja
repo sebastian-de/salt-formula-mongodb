@@ -2,6 +2,7 @@
     'Debian': {
         'pkgs': ['mongodb-server', 'mongodb', 'mongodb-clients'],
         'service': 'mongodb',
+        'config_file': "/etc/mongodb.conf",
         'lock_dir': "/var/lock/mongodb",
         'logging': {},
         'bind': {
@@ -16,6 +17,7 @@
     'RedHat': {
         'pkgs': ['mongodb-server', 'mongodb', 'mongodb-clients'],
         'service': 'mongod',
+        'config_file': "/etc/mongodb.conf",
         'lock_dir': "/var/lock/mongodb",
         'logging': {},
         'bind': {

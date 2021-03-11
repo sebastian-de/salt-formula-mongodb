@@ -5,7 +5,7 @@ mongodb_packages:
   pkg.installed:
   - names: {{ server.pkgs }}
 
-/etc/mongodb.conf:
+{{ server.config_file }}:
   file.managed:
   - source: salt://mongodb/files/mongodb.conf
   - template: jinja
@@ -39,6 +39,6 @@ mongodb_service:
     - file: {{ server.lock_dir }}
     - pkg: mongodb_packages
   - watch:
-    - file: /etc/mongodb.conf
+    - file: {{ server.config_file }}
 
 {%- endif %}
