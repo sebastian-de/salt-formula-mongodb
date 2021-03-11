@@ -76,6 +76,10 @@ Simple single server
         admin:
           username: admin
           password: magicunicorn
+          roles:
+            - userAdminAnyDatabase
+            - readWrite
+            - dbAdmin
         database:
           dbname:
             enabled: true
@@ -98,6 +102,11 @@ Cluster of 3 nodes
         admin:
           user: admin
           password: magicunicorn
+          roles:
+            - clusterAdmin
+            - userAdminAnyDatabase
+            - readWrite
+            - dbAdmin
         master: mongo01
         members:
           - host: 192.168.1.11
