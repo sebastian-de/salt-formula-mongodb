@@ -52,7 +52,7 @@ mongodb_change_root_password:
     - service: mongodb_service_running
   - creates: {{ server.lock_dir }}/mongodb_password_changed
 
-{%- for database_name, database in server.get('database', {}).iteritems() %}
+{%- for database_name, database in server.get('database', {}).items() %}
 
 /var/tmp/mongodb_user_{{ database_name }}.js:
   file.managed:
